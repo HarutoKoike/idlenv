@@ -22,7 +22,7 @@ export IDL_STARTUP=$IDL_STARTUP_NEW
 if [ -n $IDL_PACKAGE_PATH ] ; then
   IDL_PACKAGE_PATH_OLD=$IDL_PACKAGE_PATH
 fi
-export IDL_PACKAGE_PATH=${SELF_DIR}/package
+export IDL_PACKAGE_PATH=${SELF_DIR}/.package
 
 
 # create package directory
