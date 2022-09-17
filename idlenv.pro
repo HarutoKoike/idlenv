@@ -1,7 +1,24 @@
-; create directory for virtual environment and
-; copy the activate file
+;===========================================================+
+; ++ NAME ++
+;  --> idlenv.pro
 ;
-
+; ++ PURPOSE ++
+;  --> create directory for virtual environment and
+;  --> copy the activate file
+;
+; ++ POSITIONAL ARGUMENTS ++
+;  --> vdir(STRING): directory name 
+;
+; ++ KEYWORDS ++
+; -->
+;
+; ++ CALLING SEQUENCE ++
+;  --> idlenv, 'venv'
+;
+; ++ AUTHOR ++
+;  H.Koike 09/17, 2022
+;
+;===========================================================+
 PRO idlenv, vdir
 ;
 ;*---------- make directory  ----------*
