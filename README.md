@@ -3,11 +3,12 @@
 
 ## 使い方
 1. 仮想環境となるディレクトリを作り、そこに.activateを置く。
-2. source .activateを実行。
+2. `source .activate`を実行。
    カレントティレクトリにlibと.packageの2つのディレクトリと
    idl_startup.proが作成される。
 3. idl_startup.proにIDL起動時の設定を記述する。
 4. IDLを実行する。
+5. 仮想環境から抜けるときには`deactivate`を実行する。
 
 
 ## .packageディレクトリについて
