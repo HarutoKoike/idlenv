@@ -1,5 +1,11 @@
 # Virtual Environment for IDL
 
+## インストール
+### IDL8.7以上の場合
+`ipm, /install, 'https://github.com/HarutoKoike/idlenv'`
+### ILD8.6以前の場合
+IDLのシステム変数!PACKAGE_PATHのディレクトリ　(デフォルトでは、~/.idl/idl/packages)において、<br>
+`git clone 'https://github.com/HarutoKoike/idlenv'`を実行。
 
 ## 使い方
 1. `idl -e 'idlenv, "作成する仮想環境のディレクトリ名"'`を実行。<br>
