@@ -12,7 +12,7 @@
 
 
 ## .packageディレクトリについて
-.packageディレクトリはIDLのパッケージを保存するためのディレクトリ。<br>
+.packageはIDLのパッケージを保存するためのディレクトリ。<br>
 境変数IDL_PACKAGE_PATHにより指定されている。IDL Package Manager(IPM)によりインストールされるパッケージはここへ保存される。<br>
 
 IPMについて　https://www.l3harrisgeospatial.com/docs/ipm.html <br>
@@ -20,8 +20,8 @@ IDL_PACKAGE_PATHについて https://www.l3harrisgeospatial.com/docs/prefs_direc
 
 
 ## libディレクトリについて
-libは各ユーザーの作成したIPMで管理されていないライブラリを保存する場所。<br>
-デフォルトの設定ではこのディレクトリにパスは通っていないので、IDLにおいて!PATH変数に書き加える形でパスを通す。
+libは各ユーザーの作成したIPMで管理されていないライブラリを保存するディレクトリ。<br>
+デフォルトの設定ではこのディレクトリにパスが通っていないので、IDL起動時に!PATH変数に書き加える形でパスを通す。
 
 例えば、lib-Aというディレクトリにパスを通す場合、idl_startup.proに次のような記述を加える。 
 ```{idl_startup.pro}
