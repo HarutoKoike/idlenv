@@ -1,6 +1,6 @@
 {
   "Name": "idlenv",
-  "Version": "v1.0",
+  "Version": "v.0.1.0-alpha",
   "Author": "Haruto Koike",
   "Date": "Sep 2022",
   "Dependencies": {
