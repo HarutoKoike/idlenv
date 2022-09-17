@@ -1,4 +1,0 @@
-#!/bin/zsh
-
-
-cp idlenv.pro .activate ~/.idl/idl/packages/idlenv
