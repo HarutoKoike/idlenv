@@ -1,21 +1,34 @@
 #!/bin/zsh
 
+SELF_DIR=$(cd $(dirname $0); pwd)
+
 IDL_STARTUP_OLD=$IDL_STARTUP
-IDL_STARTUP_NEW="${PWD}/idl_startup.pro"
+IDL_STARTUP_NEW=${SELF_DIR}/idl_startup.pro
 
 
 # create idl statup file
 if [ ! -f $IDL_STARTUP_NEW ] ; then
   touch $IDL_STARTUP_NEW
-  echo "CD, CURRENT=cdir" >> $IDL_STARTUP_NEW
-  echo "!PATH='<IDL_DEFAULT>:+' + cdir" >> $IDL_STARTUP_NEW
+  echo "CD, CURRENT=cdir" >> ${SELF_DIR}/${IDL_STARTUP_NEW}
+  echo "!PATH='<IDL_DEFAULT>:+' + cdir" >> ${SELF_DIR}/${IDL_STARTUP_NEW}
 fi
-
 
 
 # renew IDL_STARTUP
 export IDL_STARTUP=$IDL_STARTUP_NEW
 
+
+# renew IDL_PACKAGE_PATH (IDL system variable !PACKAGE_PATH)
+if [ -n $IDL_PACKAGE_PATH ] ; then
+  IDL_PACKAGE_PATH_OLD=$IDL_PACKAGE_PATH
+fi
+export IDL_PACKAGE_PATH=${SELF_DIR}/package
+
+
+# create package directory
+if [ ! -d $IDL_PACKAGE_PATH ] ; then
+  mkdir $IDL_PACKAGE_PATH
+fi
 
 
 # create library directory
@@ -24,12 +37,10 @@ if [ ! -d lib ] ; then
 fi
 
 
-
 # change prompt
 BASE="$(basename ${PWD})"
 export PS1_OLD=$PS1
-export PS1="(IDL virtual) ${BASE} $ "
-
+export PS1="(IDL virtual) %~ "
 
 
 # delete IDL_PATH
@@ -39,12 +50,17 @@ if [ -n $IDL_PATH ] ; then
 fi
 
 
-
-
 # deactivate virtual environment
 function deactivate () {
   export IDL_STARTUP=$IDL_STARTUP_OLD
   export PS1=$PS1_OLD
-  export IDL_PATH=$IDL_PATH_OLD
+
+  if [ -n $IDL_PATH_OLD ] ; then 
+    export IDL_PATH=$IDL_PATH_OLD
+  fi
+
+  if [ -n $IDL_PACKAGE_PATH_OLD ] ; then 
+    export IDL_PACKAGE_PATH=$IDL_PACKAGE_PATH_OLD
+  fi
 }
 
