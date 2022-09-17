@@ -2,6 +2,7 @@
 
 ## インストール
 ### IDL8.7以上の場合
+IDLを起動し、以下のコマンドを実行する。
 `ipm, /install, 'https://github.com/HarutoKoike/idlenv'`
 ### ILD8.6以前の場合
 IDLのシステム変数!PACKAGE_PATHのディレクトリ　(デフォルトでは、~/.idl/idl/packages)にファイルを置く。<br>
