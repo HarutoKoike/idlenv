@@ -1,4 +1,4 @@
-#!/bin/zsh
+#/bin/zsh
 
 SELF_DIR=$(cd $(dirname $0); pwd)
 
@@ -62,5 +62,5 @@ function deactivate () {
   if [ -n $IDL_PACKAGE_PATH_OLD ] ; then 
     export IDL_PACKAGE_PATH=$IDL_PACKAGE_PATH_OLD
   fi
-}
 
+  echo "deactivated"}
