@@ -23,7 +23,7 @@ IDL_PACKAGE_PATHについて https://www.l3harrisgeospatial.com/docs/prefs_direc
 libは各ユーザーの作成したIPMで管理されていないライブラリを保存するディレクトリ。<br>
 デフォルトの設定ではこのディレクトリにパスが通っていないので、IDL起動時に!PATH変数に書き加える形でパスを通す。
 
-例えば、lib-Aというディレクトリにパスを通す場合、idl_startup.proに次のような記述を加える。 
+例えば、lib-Aというディレクトリ以下全てのディレクトリに再帰的にパスを通す場合、idl_startup.proに次のような記述を加える。 
 ```{idl_startup.pro}
   !PATH+=':+~/vidl/lib/lib-A'
 ```
