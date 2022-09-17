@@ -3,9 +3,9 @@
 
 ## 使い方
 1. `idl -e 'idlenv, "作成する仮想環境のディレクトリ名"'`を実行。<br>
-    もしくは
-2. `source .activate`を実行。
-   カレントティレクトリにlibと.packageの2つのディレクトリと
+    もしくは、idlを起動し`idlenv, 'ディレクトリ名'`を実行。
+2. 指定したディレクトリに移動し、`source .activate`を実行。
+   カレントティレクトリにlibと.packagesの2つのディレクトリと
    idl_startup.proが作成される。
 3. idl_startup.proにIDL起動時の設定を記述する。
 4. IDLを実行する。
