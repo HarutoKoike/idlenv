@@ -11,7 +11,8 @@
 5. 仮想環境から抜けるときには`deactivate`を実行する。
 
 
-## .packageディレクトリについて
+## 説明
+### .packageについて
 .packageはIDLのパッケージを保存するためのディレクトリ。<br>
 境変数IDL_PACKAGE_PATHにより指定されている。IDL Package Manager(IPM)によりインストールされるパッケージはここへ保存される。<br>
 
@@ -19,7 +20,8 @@ IPMについて　https://www.l3harrisgeospatial.com/docs/ipm.html <br>
 IDL_PACKAGE_PATHについて https://www.l3harrisgeospatial.com/docs/prefs_directory.html#PACKPATH 
 
 
-## libディレクトリについて
+
+### libについて
 libは各ユーザーの作成したIPMで管理されていないライブラリを保存するディレクトリ。<br>
 デフォルトの設定ではこのディレクトリにパスが通っていないので、IDL起動時に!PATH変数に書き加える形でパスを通す。
 
