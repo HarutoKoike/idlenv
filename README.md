@@ -5,14 +5,14 @@
 1. `idl -e 'idlenv, "作成する仮想環境のディレクトリ名"'`を実行。<br>
     もしくはidlを起動し、`idlenv, 'ディレクトリ名'`を実行。
 2. 指定したディレクトリに移動し、`source .activate`を実行。
-   カレントティレクトリにlibと.packagesの2つのディレクトリと
-   idl_startup.proが作成される。
 3. idl_startup.proにIDL起動時の設定を記述する。
 4. IDLを実行する。
 5. 仮想環境から抜けるときには`deactivate`を実行する。
 
 
 ## 説明
+activate成功後には、libと.packagesの2つのディレクトリとidl_startup.proが作成される。
+
 ### .packageについて
 .packageはIDLのパッケージを保存するためのディレクトリ。<br>
 境変数IDL_PACKAGE_PATHにより指定されている。IDL Package Manager(IPM)によりインストールされるパッケージはここへ保存される。<br>
