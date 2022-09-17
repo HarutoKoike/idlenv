@@ -2,7 +2,7 @@
 
 
 ## 使い方
-1. 仮想環境となるディレクトリを作り、そこに.activateファイルを置く。
+1. 仮想環境となるディレクトリを作り、そこに.activateを置く。
 2. source .activateを実行。
    カレントティレクトリにlibと.packageの2つのディレクトリと
    idl_startup.proが作成される。
