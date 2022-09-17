@@ -15,7 +15,7 @@
 .packageディレクトリはIDLのパッケージを保存するためのディレクトリ。<br>
 境変数IDL_PACKAGE_PATHにより指定されている。IDL Package Manager(IPM)によりインストールされるパッケージはここへ保存される。<br>
 
-IPMについて　https://www.l3harrisgeospatial.com/docs/ipm.html
+IPMについて　https://www.l3harrisgeospatial.com/docs/ipm.html <br>
 IDL_PACKAGE_PATHについて https://www.l3harrisgeospatial.com/docs/prefs_directory.html#PACKPATH 
 
 
