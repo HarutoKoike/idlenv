@@ -1,4 +1,4 @@
-#/bin/zsh
+#!/bin/zsh
 
 SELF_DIR=$(cd $(dirname $0); pwd)
 
@@ -9,8 +9,8 @@ IDL_STARTUP_NEW=${SELF_DIR}/idl_startup.pro
 # create idl statup file
 if [ ! -f $IDL_STARTUP_NEW ] ; then
   touch $IDL_STARTUP_NEW
-  echo "CD, CURRENT=cdir" >> ${SELF_DIR}/${IDL_STARTUP_NEW}
-  echo "!PATH='<IDL_DEFAULT>:+' + cdir" >> ${SELF_DIR}/${IDL_STARTUP_NEW}
+  #echo "CD, CURRENT=cdir" >> ${IDL_STARTUP_NEW}
+  #echo "!PATH='<IDL_DEFAULT>:+' + cdir" >> ${IDL_STARTUP_NEW}
 fi
 
 
@@ -22,7 +22,7 @@ export IDL_STARTUP=$IDL_STARTUP_NEW
 if [ -n $IDL_PACKAGE_PATH ] ; then
   IDL_PACKAGE_PATH_OLD=$IDL_PACKAGE_PATH
 fi
-export IDL_PACKAGE_PATH=${SELF_DIR}/.package
+export IDL_PACKAGE_PATH=${SELF_DIR}/.packages
 
 
 # create package directory
@@ -40,7 +40,7 @@ fi
 # change prompt
 BASE="$(basename ${PWD})"
 export PS1_OLD=$PS1
-export PS1="(IDL virtual) %~ "
+export PS1="(IDLENV) %~ "
 
 
 # delete IDL_PATH
@@ -63,4 +63,5 @@ function deactivate () {
     export IDL_PACKAGE_PATH=$IDL_PACKAGE_PATH_OLD
   fi
 
-  echo "deactivated"}
+  echo "deactivated"
+}
