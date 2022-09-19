@@ -48,7 +48,7 @@ CLOSE, 1
 ;*---------- copy .activate file  ----------*
 ;
 dest   = FILEPATH('', ROOT=cdir, SUBDIR=vdir)
-source = FILEPATH('.activate', ROOT=!PACKAGE_PATH, SUBDIR='idlenv')
+source = FILEPATH('bin', ROOT=!PACKAGE_PATH, SUBDIR='idlenv')
 FILE_COPY, source, dest
 
 END

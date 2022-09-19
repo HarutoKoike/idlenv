@@ -1,16 +1,23 @@
 #!/bin/zsh
 
 SELF_DIR=$(cd $(dirname $0); pwd)
+PARENT_DIR=$(dirname $SELF_DIR)
+
+
+
+
+# path
+export PATH=${PATH}:${SELF_DIR}
+chmod 755 ${SELF_DIR}/freeze
+
 
 IDL_STARTUP_OLD=$IDL_STARTUP
-IDL_STARTUP_NEW=${SELF_DIR}/idl_startup.pro
+IDL_STARTUP_NEW=${PARENT_DIR}/idl_startup.pro
 
 
 # create idl statup file
-if [ ! -f $IDL_STARTUP_NEW ] ; then
+if [ ! -e $IDL_STARTUP_NEW ] ; then
   touch $IDL_STARTUP_NEW
-  #echo "CD, CURRENT=cdir" >> ${IDL_STARTUP_NEW}
-  #echo "!PATH='<IDL_DEFAULT>:+' + cdir" >> ${IDL_STARTUP_NEW}
 fi
 
 
@@ -22,18 +29,18 @@ export IDL_STARTUP=$IDL_STARTUP_NEW
 if [ -n $IDL_PACKAGE_PATH ] ; then
   IDL_PACKAGE_PATH_OLD=$IDL_PACKAGE_PATH
 fi
-export IDL_PACKAGE_PATH=${SELF_DIR}/.packages
+export IDL_PACKAGE_PATH=${PARENT_DIR}/.packages
 
 
 # create package directory
-if [ ! -d $IDL_PACKAGE_PATH ] ; then
+if [ ! -e $IDL_PACKAGE_PATH ] ; then
   mkdir $IDL_PACKAGE_PATH
 fi
 
 
 # create library directory
-if [ ! -d lib ] ; then
-  mkdir lib
+if [ ! -e ${PARENT_DIR}/lib ] ; then
+  mkdir ${PARENT_DIR}/lib
 fi
 
 
@@ -49,6 +56,9 @@ if [ -n $IDL_PATH ] ; then
   unset IDL_PATH
 fi
 
+
+# new IDL_PATH
+export IDL_PATH="<IDL_DEFAULT>:${SELF_DIR}"
 
 # deactivate virtual environment
 function deactivate () {

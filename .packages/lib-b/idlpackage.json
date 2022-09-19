@@ -1,0 +1,19 @@
+{
+  "Name": "lib-b",
+  "Version": "1.9.13",
+  "Author": "Natasha Fatale",
+  "Date": "Sep 2017",
+  "Dependencies": [
+    {
+      "Name": "IDL",
+      "Version": "^8.6"
+    },
+    {
+      "Name": "Squirrel",
+      "Version": ">5.10",
+      "URL": "url-b"
+    }
+  ]
+}
+
+
