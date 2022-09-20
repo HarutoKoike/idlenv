@@ -22,12 +22,13 @@ git clone 'https://github.com/HarutoKoike/idlenv'
 5. 仮想環境から抜けるときには`deactivate`を実行する。
 
 
-## 説明
+## 作成されるディレクトリ・ファイルについて
 activate成功後には、libと.packagesの2つのディレクトリとidl_startup.proが作成される。
 
 ### .packageについて
 .packageはIDLのパッケージを保存するためのディレクトリ。<br>
-境変数IDL_PACKAGE_PATHにより指定されている。IDL Package Manager(IPM)によりインストールされるパッケージはここへ保存される。<br>
+システム変数!PACKAGE_PATH(もしくは、シェル環境変数IDL_PACKAGE_PATH)により指定されている。<br>
+IDL Package Manager(IPM)によりインストールされるパッケージはここへ保存される。<br>
 
 IPMについて　https://www.l3harrisgeospatial.com/docs/ipm.html <br>
 IDL_PACKAGE_PATHについて https://www.l3harrisgeospatial.com/docs/prefs_directory.html#PACKPATH 
@@ -56,6 +57,7 @@ lib-A以下全てのディレクトリに再帰的にパスを通す場合、パ
 freeze.proは、.packageディレクトリ直下に保存された全てのパッケージの情報をCSVファイルに書き出す。 <br>
 例えば、mypkgというパッケージがあるときには、'.package/mypkg/idlpackage.json'というJSONファイルを探し、 <br>
 その中の"Name", "URL", "Version"という3つのフィールドを抜き出す。<br>
+全てのパッケージを探索して情報を抜きだし、`requirements.csv`というファイル名で書き出す。<br>
 ```
 IDL> freeze`
 ```
