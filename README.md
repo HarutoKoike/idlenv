@@ -57,9 +57,9 @@ lib-A以下全てのディレクトリに再帰的にパスを通す場合、パ
 freeze.proは、.packageディレクトリ直下に保存された全てのパッケージの情報をCSVファイルに書き出す。 <br>
 例えば、mypkgというパッケージがあるときには、'.package/mypkg/idlpackage.json'というJSONファイルを探し、 <br>
 その中の"Name", "URL", "Version"という3つのフィールドを抜き出す。<br>
-全てのパッケージを探索して情報を抜きだし、`requirements.csv`というファイル名で書き出す。<br>
+全てのパッケージを探索して情報を抜き出し、`requirements.csv`というファイル名で書き出す。<br>
 ```
-IDL> freeze`
+IDL> freeze
 ```
 
 ### install_pkg.pro
