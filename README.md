@@ -16,7 +16,7 @@ git clone 'https://github.com/HarutoKoike/idlenv'
 ## 使い方
 1. `idl -e 'idlenv, "作成する仮想環境のディレクトリ名"'`を実行。<br>
     もしくはidlを起動し、`idlenv, 'ディレクトリ名'`を実行。
-2. 指定したディレクトリに移動し、`source .activate`を実行。
+2. 指定したディレクトリに移動し、`source bin/activate`を実行。
 3. idl_startup.proにIDL起動時の設定を記述する。
 4. IDLを実行する。
 5. 仮想環境から抜けるときには`deactivate`を実行する。
