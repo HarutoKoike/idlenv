@@ -4,10 +4,10 @@
 ### IDL8.7以上の場合
 IDLを起動し、以下のコマンドを実行する。<br>
 ```
-IDL> ipm, /install, 'https://github.com/HarutoKoike/idlenv'`
+IDL> ipm, /install, 'https://github.com/HarutoKoike/idlenv'
 ```
 ### ILD8.6以前の場合
-IDLのシステム変数!PACKAGE_PATHのディレクトリ　(デフォルトでは、~/.idl/idl/packages)にインストールする。<br>
+IDLのシステム変数!PACKAGE_PATHのディレクトリ　(デフォルトでは、~/.idl/idl/packages)に直接インストールする。<br>
 ```
 cd ~/.idl/idl/packages
 git clone 'https://github.com/HarutoKoike/idlenv'`
