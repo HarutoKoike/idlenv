@@ -5,11 +5,6 @@ SELF_DIR=$(cd $(dirname $0); pwd)
 PARENT_DIR=$(dirname $SELF_DIR)
 
 
-# path
-export PATH=${PATH}:${SELF_DIR}
-chmod 755 ${SELF_DIR}/freeze
-
-
 IDL_STARTUP_OLD=$IDL_STARTUP
 IDL_STARTUP_NEW=${PARENT_DIR}/idl_startup.pro
 
