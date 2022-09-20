@@ -10,7 +10,7 @@ IDL> ipm, /install, 'https://github.com/HarutoKoike/idlenv'
 IDLのシステム変数!PACKAGE_PATHのディレクトリ　(デフォルトでは、~/.idl/idl/packages)に直接インストールする。<br>
 ```
 cd ~/.idl/idl/packages
-git clone 'https://github.com/HarutoKoike/idlenv'`
+git clone 'https://github.com/HarutoKoike/idlenv'
 ```
 
 ## 使い方
