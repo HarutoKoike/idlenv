@@ -20,6 +20,7 @@
 ;  H.Koike 09/17, 2022
 ;
 ;===========================================================+
+;
 PRO idlenv, vdir
 ;
 ;*---------- make directory  ----------*
@@ -50,6 +51,6 @@ CLOSE, 1
 ;
 dest   = FILEPATH('', ROOT=cdir, SUBDIR=vdir)
 source = FILEPATH('bin', ROOT=!PACKAGE_PATH, SUBDIR='idlenv')
-FILE_COPY, source, dest
+FILE_COPY, source, dest, /RECURSIVE
 
 END
