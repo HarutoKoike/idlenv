@@ -3,10 +3,15 @@
 ## インストール
 ### IDL8.7以上の場合
 IDLを起動し、以下のコマンドを実行する。<br>
-`IDL> ipm, /install, 'https://github.com/HarutoKoike/idlenv'`
+```
+IDL> ipm, /install, 'https://github.com/HarutoKoike/idlenv'`
+```
 ### ILD8.6以前の場合
 IDLのシステム変数!PACKAGE_PATHのディレクトリ　(デフォルトでは、~/.idl/idl/packages)にインストールする。<br>
-例 `git clone 'https://github.com/HarutoKoike/idlenv'`
+```
+cd ~/.idl/idl/packages
+git clone 'https://github.com/HarutoKoike/idlenv'`
+```
 
 ## 使い方
 1. `idl -e 'idlenv, "作成する仮想環境のディレクトリ名"'`を実行。<br>
@@ -51,12 +56,14 @@ lib-A以下全てのディレクトリに再帰的にパスを通す場合、パ
 freeze.proは、.packageディレクトリ直下に保存された全てのパッケージの情報をCSVファイルに書き出す。 <br>
 例えば、mypkgというパッケージがあるときには、'.package/mypkg/idlpackage.json'というJSONファイルを探し、 <br>
 その中の"Name", "URL", "Version"という3つのフィールドを抜き出す。<br>
-`IDL> freeze`
-
+```
+IDL> freeze`
+```
 
 ### install_pkg.pro
 install_pkg.proは、freeze.proで書き出したパッケージ情報のCSVファイルを読み込み、インストールを行う。<br>
 このとき、"URL"フィールドが存在しない場合（パッケージがネットワークからアクセスできない場合）、インストールは行わない。<br>
 "Version"フィールドが存在する場合、それに応じたバージョンをインストールする。<br>
-`IDL> install_pkg, 'requirements.csv'`
-
+```
+IDL> install_pkg, 'requirements.csv'
+```
