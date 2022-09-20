@@ -1,4 +1,4 @@
-# Virtual Environment for IDL
+# Virtual Environment for IDL (>IDL8.4)
 
 ## インストール
 ### IDL8.7以上の場合
