@@ -1,9 +1,8 @@
 #!/bin/zsh
 
+# path
 SELF_DIR=$(cd $(dirname $0); pwd)
 PARENT_DIR=$(dirname $SELF_DIR)
-
-
 
 
 # path

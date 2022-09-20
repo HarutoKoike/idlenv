@@ -13,7 +13,8 @@
 ; -->
 ;
 ; ++ CALLING SEQUENCE ++
-;  --> idlenv, 'venv'
+;  --> idlenv, 'venv' (IDL command line)
+;  --> idl -e 'idlenv, "directory name"' 
 ;
 ; ++ AUTHOR ++
 ;  H.Koike 09/17, 2022
