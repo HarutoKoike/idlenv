@@ -27,7 +27,7 @@ activate成功後には、libと.packagesの2つのディレクトリとidl_star
 
 ### .packageについて
 .packageはIDLのパッケージを保存するためのディレクトリ。<br>
-システム変数!PACKAGE_PATH(もしくは、シェル環境変数IDL_PACKAGE_PATH)により指定されている。<br>
+システム変数!PACKAGE_PATH(もしくは、シェル環境変数$IDL_PACKAGE_PATH)により指定されている。<br>
 IDL Package Manager(IPM)によりインストールされるパッケージはここへ保存される。<br>
 
 IPMについて　https://www.l3harrisgeospatial.com/docs/ipm.html <br>
