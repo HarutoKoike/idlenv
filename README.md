@@ -14,12 +14,14 @@ git clone 'https://github.com/HarutoKoike/idlenv'
 ```
 
 ## 使い方
-1. `idl -e 'idlenv, "作成する仮想環境のディレクトリ名"'`を実行。<br>
-    もしくはidlを起動し、`idlenv, 'ディレクトリ名'`を実行。
-2. 指定したディレクトリに移動し、`source bin/activate`を実行。
-3. idl_startup.proにIDL起動時の設定を記述する。
-4. IDLを実行する。
-5. 仮想環境から抜けるときには`deactivate`を実行する。
+1. 仮想環境を作りたいディレクトリに移動する。
+2. `idl -e 'idlenv, "作成する仮想環境のディレクトリ名"'`を実行。<br>
+    もしくはidlを起動し、`idlenv, 'ディレクトリ名'`を実行。 <br>
+    このとき、**ディレクトリ名は相対パスで指定する。**
+3. 指定したディレクトリに移動し、`source bin/activate`を実行。
+4. idl_startup.proにIDL起動時の設定を記述する。
+5. IDLを実行する。
+6. 仮想環境から抜けるときには`deactivate`を実行する。
 
 
 ## 作成されるディレクトリ・ファイルについて
