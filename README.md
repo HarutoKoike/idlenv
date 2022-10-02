@@ -1,4 +1,4 @@
-# Virtual Environment for IDL (>IDL8.4)
+# Virtual Environment for IDL (>IDL8.3)
 
 ## インストール
 ### IDL8.7以上の場合
@@ -25,11 +25,13 @@ git clone 'https://github.com/HarutoKoike/idlenv'
 
 
 ## 作成されるディレクトリ・ファイルについて
-activate成功後には、libと.packagesの2つのディレクトリとidl_startup.proが作成される。
+activate成功後には、libと.packagesの2つのディレクトリとスタートアップファイルが作成される。 <br>
+スタートアップファイルは、`(仮想環境のディレクトリ名)_startup.pro`となる。　<br>
+activate時に、環境変数IDL_STARTUPは、作成されたスタートアップファイルになっている。
 
 ### .packageについて
 .packageはIDLのパッケージを保存するためのディレクトリ。<br>
-システム変数!PACKAGE_PATH(もしくは、シェル環境変数$IDL_PACKAGE_PATH)により指定されている。<br>
+システム変数!PACKAGE_PATH(もしくは、環境変数$IDL_PACKAGE_PATH)により指定され、`<IDL_DEFAULT>`に含まれる事になる。<br>
 IDL Package Manager(IPM)によりインストールされるパッケージはここへ保存される。<br>
 
 IPMについて　https://www.l3harrisgeospatial.com/docs/ipm.html <br>
@@ -41,7 +43,7 @@ IDL_PACKAGE_PATHについて https://www.l3harrisgeospatial.com/docs/prefs_direc
 libは各ユーザーの作成したIPMで管理されていないライブラリを保存するディレクトリ。<br>
 デフォルトの設定ではこのディレクトリにパスが通っていないので、IDL起動時に!PATH変数に書き加える形でパスを通す。
 
-例えば、lib-Aというディレクトリにパスを通す場合、idl_startup.proに次のような記述を加える。 
+例えば、lib-Aというディレクトリにパスを通す場合、スタートアップファイルに次のような記述を加える。 
 ```{idl}
   !PATH+=':~/vidl/lib/lib-A'
 ```
