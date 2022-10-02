@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/bin/bash
 
 # path
 SELF_DIR=$(cd $(dirname $0); pwd)
@@ -6,7 +6,7 @@ PARENT_DIR=$(dirname $SELF_DIR)
 
 
 IDL_STARTUP_OLD=$IDL_STARTUP
-IDL_STARTUP_NEW=${PARENT_DIR}/idl_startup.pro
+IDL_STARTUP_NEW=${PARENT_DIR}/$(basename ${PARENT_DIR})_startup.pro
 
 
 # create idl statup file
