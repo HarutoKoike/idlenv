@@ -1,6 +1,6 @@
 ;===========================================================+
 ; ++ NAME ++
-;  --> idlenv.pro
+PRO idlenv, vdir
 ;
 ; ++ PURPOSE ++
 ;  --> create directory for virtual environment and
@@ -21,7 +21,6 @@
 ;
 ;===========================================================+
 ;
-PRO idlenv, vdir
 ;
 ;*---------- make directory  ----------*
 ;
