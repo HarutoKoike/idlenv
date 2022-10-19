@@ -52,7 +52,7 @@ fi
 
 # new IDL_PATH
 DIR0=$(head -n 1 ${PARENT_DIR}/.idlenvcfg)
-export IDL_PATH="<IDL_DEFAULT>:${SELF_DIR}:${DIR0}"
+export IDL_PATH="<IDL_DEFAULT>:${SELF_DIR}:${DIR0}:+${PARENT_DIR}"
 
 
 
