@@ -28,28 +28,30 @@ IF SIZE(vdir, /TYPE) EQ 7 THEN $
   FILE_MKDIR, vdir
 
 IF SIZE(vdir, /TYPE) NE 7 THEN BEGIN
-  PRINT, '% Argument must be STRING'
-  RETURN
+  MESSAGE, '% Argument must be STRING'
 ENDIF
+
+
+;
+;*---------- copy activate file  ----------*
+;
+CD, CURRENT=cdir
+dest   = FILEPATH('', ROOT=cdir, SUBDIR=vdir)
+source = FILEPATH('bin', ROOT=!PACKAGE_PATH, SUBDIR='idlenv')
+FILE_COPY, source, dest, /RECURSIVE 
 
 
 ;
 ;*---------- configuration file  ----------*
 ;
-CD, CURRENT=cdir
-config  = FILEPATH('idlenv.cfg', ROOT=cdir, SUBDIR=vdir)
+config  = FILEPATH('.idlenvcfg', ROOT=cdir, SUBDIR=vdir)
 version = !VERSION.RELEASE
+; 
+self_dir = FILE_DIRNAME(ROUTINE_FILEPATH())
 ;
-OPENW, 1, config
-PRINTF, 1, 'version = ' + version
-CLOSE, 1
-
-
-;
-;*---------- copy .activate file  ----------*
-;
-dest   = FILEPATH('', ROOT=cdir, SUBDIR=vdir)
-source = FILEPATH('bin', ROOT=!PACKAGE_PATH, SUBDIR='idlenv')
-FILE_COPY, source, dest, /RECURSIVE
+OPENW, lun, config, /GET_LUN
+PRINTF, lun, self_dir
+PRINTF, lun, 'version = ' + version
+FREE_LUN, lun
 
 END

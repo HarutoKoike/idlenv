@@ -4,7 +4,6 @@
 SELF_DIR=$(cd $(dirname $0); pwd)
 PARENT_DIR=$(dirname $SELF_DIR)
 
-
 IDL_STARTUP_OLD=$IDL_STARTUP
 IDL_STARTUP_NEW=${PARENT_DIR}/$(basename ${PARENT_DIR})_startup.pro
 
@@ -33,9 +32,9 @@ fi
 
 
 # create library directory
-if [ ! -e ${PARENT_DIR}/lib ] ; then
-  mkdir ${PARENT_DIR}/lib
-fi
+#if [ ! -e ${PARENT_DIR}/lib ] ; then
+#  mkdir ${PARENT_DIR}/lib
+#fi
 
 
 # change prompt
@@ -52,7 +51,10 @@ fi
 
 
 # new IDL_PATH
-export IDL_PATH="<IDL_DEFAULT>:${SELF_DIR}"
+DIR0=$(head -n 1 ${PARENT_DIR}/.idlenvcfg)
+export IDL_PATH="<IDL_DEFAULT>:${SELF_DIR}:${DIR0}"
+
+
 
 # deactivate virtual environment
 function deactivate () {
