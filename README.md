@@ -29,6 +29,10 @@ activate成功後には、libと.packagesの2つのディレクトリとスタ�
 スタートアップファイルは、`(仮想環境のディレクトリ名)_startup.pro`となる。　<br>
 activate時に、環境変数IDL_STARTUPは、作成されたスタートアップファイルになっている。
 
+### .idlenvcfg
+idlenvによってディレクトリが作成されると、作成したディレクトリに`.idlenvcfg`という設定ファイルが作られる。<br>
+このファイルには、idlenvのライブラリのパスとidlのバージョンが書き込まれる。別のデバイスにフォルダを移行する場合、idlenvへのパスを書き換えないと、下記のプロシージャを使うことができないので注意。
+
 ### .packageについて
 .packageはIDLのパッケージを保存するためのディレクトリ。<br>
 システム変数!PACKAGE_PATH(もしくは、環境変数$IDL_PACKAGE_PATH)により指定され、`<IDL_DEFAULT>`に含まれる事になる。<br>
@@ -36,6 +40,7 @@ IDL Package Manager(IPM)によりインストールされるパッケージは�
 
 IPMについて　https://www.l3harrisgeospatial.com/docs/ipm.html <br>
 IDL_PACKAGE_PATHについて https://www.l3harrisgeospatial.com/docs/prefs_directory.html#PACKPATH 
+
 
 
 
