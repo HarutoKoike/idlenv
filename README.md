@@ -33,7 +33,7 @@ activate時に、環境変数IDL_STARTUPは、作成されたスタートアッ�
 idlenvによってディレクトリが作成されると、作成したディレクトリに`.idlenvcfg`という設定ファイルが作られる。<br>
 このファイルには、idlenvのライブラリのパスとidlのバージョンが書き込まれる。別のデバイスにフォルダを移行する場合、idlenvへのパスを書き換えないと、下記のプロシージャを使うことができないので注意。
 
-### .packageについて
+### .package
 .packageはIDLのパッケージを保存するためのディレクトリ。<br>
 システム変数!PACKAGE_PATH(もしくは、環境変数$IDL_PACKAGE_PATH)により指定され、`<IDL_DEFAULT>`に含まれる事になる。<br>
 IDL Package Manager(IPM)によりインストールされるパッケージはここへ保存される。<br>
