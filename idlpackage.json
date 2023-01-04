@@ -1,8 +1,8 @@
 {
   "Name": "idlenv",
-  "Version": "v.1.1",
+  "Version": "v.1.2",
   "Author": "Haruto Koike",
-  "Date": "Sep 2021",
+  "Date": "Dec 2022",
   "Dependencies": {
       "Name": "IDL",
       "Version": ">8.3"
