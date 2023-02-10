@@ -37,7 +37,7 @@ ENDIF
 ;
 CD, CURRENT=cdir
 dest   = FILEPATH('', ROOT=cdir, SUBDIR=vdir)
-source = FILEPATH('bin', ROOT=!PACKAGE_PATH, SUBDIR='idlenv')
+source = FILEPATH('bin', ROOT=selfpath(/path))
 FILE_COPY, source, dest, /RECURSIVE 
 
 

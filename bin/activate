@@ -10,11 +10,23 @@ IDL_STARTUP_NEW=${PARENT_DIR}/$(basename ${PARENT_DIR})_startup.pro
 
 # create idl statup file
 if [ ! -e $IDL_STARTUP_NEW ] ; then
-  touch $IDL_STARTUP_NEW
+
+    touch $IDL_STARTUP_NEW
+
+    # !PROJECT system variable
+    echo "DEFSYSV, '!PROJECT', '${PARENT_DIR}'" >>  $IDL_STARTUP_NEW
+    
+    # default startup procedure
+    if [ -e "$IDL_STARTUP_DEFAULT" ] ; then
+        cat $IDL_STARTUP_DEFAULT >> $IDL_STARTUP_NEW    
+    fi
 fi
 
 
-# renew IDL_STARTUP
+# write default startup procedures
+
+
+# renew idl_startup
 export IDL_STARTUP=$IDL_STARTUP_NEW
 
 
