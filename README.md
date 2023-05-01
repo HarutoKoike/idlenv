@@ -84,3 +84,11 @@ install_pkg.proは、freeze.proで書き出したパッケージ情報のCSVフ�
 ```
 IDL> install_pkg, 'requirements.csv'
 ```
+
+
+## 自動コンパイルの回避
+exclude_pathプロシージャにより、特定のディレクトリ以下のプロシージャは自動コンパイルされないようにすることができる（システム変数!PATHから無理やり削除する）。
+recursiveキーワードを指定することで、指定ディレクトリ以下の全てのディレクトリを再帰的に含めることができる。
+```
+exclude_path, './hoge', /recursive
+```
