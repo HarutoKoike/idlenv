@@ -15,32 +15,42 @@ FUNCTION selfpath, path=path, filename=filename
 ;  -->
 ;
 ; ++ HISTORY ++
-;  H.Koike 
+;  H.Koike
 ;===========================================================+
 ;
-HELP, /LEVEL, OUT=out_str
+HELP, /LEVEL, OUT=out
 ;
-str  = '% At SELFPATH*'
-idx  = WHERE( STRMATCH(out_str, str) ) + 1
-info = out_str[idx]
+str   = ''
+dummy = 'taiofajrwaevaewrjagarjfvsearrjajlcaawe'
 ;
+for i = 0, n_elements(out) - 1 do begin
+    initial = strmid(out[i], 0, 1)
+    if initial ne '%' then $
+        str += out[i]
+    if initial eq '%' then $
+        str += dummy + out[i]
+endfor
+;
+str  = strcompress(str, /remove_all)
+str  = strsplit(str, dummy + '%', /extract, /regex)
+
+match = 'AtSELFPATH*selfpath.pro'
+idx   = where( strmatch(str, match), count) + 1
+
+info = str[idx]
 
 ;
 ;*----------   ----------*
 ;
-r = (STRSPLIT(info, ' ', /EXTRACT))[-1]
+info = strsplit(info, path_sep(), /extract)
+root = path_sep() + info[1]
+sub  = info[2:-2]
+fn   = info[-1]
 ;
-IF KEYWORD_SET(path) THEN BEGIN 
-    r = STRSPLIT(r, PATH_SEP(), /EXTRACT)
-    r = FILEPATH(r[-2], SUBDIR=r[1:-3], ROOT=r[0])
-    r = PATH_SEP() + r
-ENDIF
-;
-IF KEYWORD_SET(filename) THEN BEGIN
-    r = STRSPLIT(r, PATH_SEP(), /EXTRACT)
-    r = r[-1]
-ENDIF
+if keyword_set(path) then $
+    return, filepath('', root=root, sub=sub)
+if keyword_set(filename) then $
+    return, fn
 
-
-RETURN, r
-END
+return, filepath(fn, root=root, sub=sub)
+end
