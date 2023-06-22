@@ -24,7 +24,7 @@ COMPILE_OPT IDL2
 path_full = path
 
 IF ~FILE_TEST(path) THEN $
-  MESSAGE, 'Directory "' + path + '" not fount.'
+  MESSAGE, 'Directory "' + path + '" not found.'
 
 ; recursive include
 IF KEYWORD_SET(recursive) THEN BEGIN
