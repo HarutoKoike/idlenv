@@ -3,6 +3,7 @@
 # path
 SELF_DIR=$(cd $(dirname $0); pwd)
 PARENT_DIR=$(dirname $SELF_DIR)
+export IDLENV_PROJECT_PATH=$PARENT_DIR
 
 IDL_STARTUP_OLD=$IDL_STARTUP
 IDL_STARTUP_NEW=${PARENT_DIR}/$(basename ${PARENT_DIR})_startup.pro
@@ -14,7 +15,7 @@ if [ ! -e $IDL_STARTUP_NEW ] ; then
     touch $IDL_STARTUP_NEW
 
     # !PROJECT system variable
-    echo "DEFSYSV, '!PROJECT', '${PARENT_DIR}'" >>  $IDL_STARTUP_NEW
+    echo "DEFSYSV, '!PROJECT', GETENV('IDLENV_PROJECT_PATH')" >>  $IDL_STARTUP_NEW
     
     # default startup procedure
     if [ -e "$IDL_STARTUP_DEFAULT" ] ; then
@@ -65,7 +66,7 @@ fi
 # new IDL_PATH
 DIR0=$(head -n 1 ${PARENT_DIR}/.idlenvcfg)
 export IDL_PATH="<IDL_DEFAULT>:${SELF_DIR}:${DIR0}:+${PARENT_DIR}"
-export IDL_PATH=${IDL_PATH}:${HOME}/.idl/idl/packages/idlenv
+export IDL_PATH=${IDL_PATH}:+${HOME}/.idl/idl/packages/idlenv
 
 
 
