@@ -32,7 +32,7 @@ IF SIZE(epath, /TYPE) NE 7 THEN $
 ;
 ep = EXPAND_PATH(epath)
 IF ~KEYWORD_SET(absolute) THEN ep = FILEPATH(ep, ROOT=current)
-IF KEYWORD_SET(recursive) THEN ep = '+' + ep
+IF KEYWORD_SET(recursive) THEN ep = EXPAND_PATH('+' + ep)
 ;
 ep = STRSPLIT(ep, ':', /EXTRACT)
 ;
