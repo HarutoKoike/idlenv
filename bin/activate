@@ -6,7 +6,8 @@ PARENT_DIR=$(dirname $SELF_DIR)
 export IDLENV_PROJECT_PATH=$PARENT_DIR
 
 IDL_STARTUP_OLD=$IDL_STARTUP
-IDL_STARTUP_NEW=${PARENT_DIR}/$(basename ${PARENT_DIR})_startup.pro
+#IDL_STARTUP_NEW=${PARENT_DIR}/$(basename ${PARENT_DIR})_startup.pro
+IDL_STARTUP_NEW=${PARENT_DIR}/idl_startup.pro
 
 
 # create idl statup file
