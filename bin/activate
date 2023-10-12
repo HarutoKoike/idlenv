@@ -54,7 +54,7 @@ fi
 # change prompt
 BASE="$(basename ${PWD})"
 export PS1_OLD=$PS1
-export PS1="(IDLENV) \W % "
+export PS1="%B%F{magenta}(IDLENV)%f%b %n % "
 
 
 # delete IDL_PATH
